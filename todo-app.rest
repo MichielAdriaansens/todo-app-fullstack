@@ -1,0 +1,46 @@
+###
+GET  http://localhost:3000/
+
+### Register a user POST auth/register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username":"SamHyde@gmail.com",
+    "password":"waterloo"
+}
+
+### Login a registered user POST auth/login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username":"SamHyde@gmail.com",
+    "password":"waterloo"
+}
+
+### fetch all todos GET /TODOS (protected)
+GET http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM2MzU2NTIxLCJleHAiOjE3MzY0NDI5MjF9.JIN7D65W57wpnv6x4OQCwTgENGFR9vttKvk40AFhAsY
+
+### post a new todo to todos db POST /TODOS (protected)
+POST http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM2MzU2NTIxLCJleHAiOjE3MzY0NDI5MjF9.JIN7D65W57wpnv6x4OQCwTgENGFR9vttKvk40AFhAsY
+Content-Type: application/json
+
+{
+    "task": "Finish coding this project!"
+}
+
+### update a todo PUT /TODOS/:id (protected)
+PUT http://localhost:3000/todos/6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM2MzU2NTIxLCJleHAiOjE3MzY0NDI5MjF9.JIN7D65W57wpnv6x4OQCwTgENGFR9vttKvk40AFhAsY
+Content-Type: application/json
+
+{
+    "completed": 1
+}
+
+### delete a todo DELETE /TODOS/:id (protected)
+DELETE http://localhost:3000/todos/7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM2MzU2NTIxLCJleHAiOjE3MzY0NDI5MjF9.JIN7D65W57wpnv6x4OQCwTgENGFR9vttKvk40AFhAsY
